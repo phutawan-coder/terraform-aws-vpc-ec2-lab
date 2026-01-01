@@ -1,4 +1,4 @@
-# AWS VPC: Public App & Private DB with Security Group Referencing
+# AWS VPC: Public App & Private DB with Security Group Referencing ( Using Terraform )
 
 ## Overview
 This project demonstrates a cost-optimized AWS VPC design where:
@@ -13,8 +13,8 @@ This project demonstrates a cost-optimized AWS VPC design where:
 - App EC2 (public subnet)
 - DB EC2 (private subnet)
 - Security Groups:
-  - sg-app: allows SSH from my IP
-  - sg-db: allows SSH and DB traffic only from sg-app
+  - public-sg: allows SSH from my IP
+  - private-sg: allows SSH and DB traffic only from public-sg
 
 ## Security Design
 - Database instance has no public IP
