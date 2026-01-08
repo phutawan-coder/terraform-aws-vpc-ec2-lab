@@ -1,8 +1,10 @@
 resource "aws_vpc" "this" {
   cidr_block = var.vpc_cidr
-  
+  enable_dns_support = true
+  enable_dns_hostnames = true
+
   tags = {
-    Name = "vpc_lab2"
+    Name = "vpc_lab1"
   }
 }
 
@@ -13,7 +15,7 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true 
 
   tags = {
-    Name = "public-sb"
+    Name = "public-sb-lab1"
   }
 }
 
@@ -23,7 +25,7 @@ resource "aws_subnet" "private" {
   availability_zone = var.avaliablezone
 
   tags = {
-    Name = "private-sb"
+    Name = "private-sb-lab1"
   }
 }
 
@@ -31,7 +33,7 @@ resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.this.id
 
   tags = {
-    Name = "igw-lab2"
+    Name = "igw-lab1"
   }
 }
 
@@ -44,7 +46,7 @@ resource "aws_route_table" "public" {
   }
 
   tags = {
-    Name = "public-rt-lab2"
+    Name = "public-rt-lab1"
   }
 }
 
@@ -52,7 +54,7 @@ resource "aws_route_table" "private" {
   vpc_id = aws_vpc.this.id
 
   tags = {
-    Name = "private-rt-lab2"
+    Name = "private-rt-lab1"
   }
 }
 
@@ -84,7 +86,7 @@ resource "aws_security_group" "public" {
   }
 
   tags = {
-    Name = "public-sg-lab2"
+    Name = "public-sg-lab1"
   }
 }
 
@@ -106,6 +108,6 @@ resource "aws_security_group" "private" {
   }
 
   tags = {
-    Name = "private-sg"
+    Name = "private-sg-lab1"
   }
 }
