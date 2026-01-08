@@ -1,4 +1,3 @@
-output "ec2_public_IP" {
-  description = "IP"
+output "app_public_ip" {
   value = aws_instance.this.public_ip
 }

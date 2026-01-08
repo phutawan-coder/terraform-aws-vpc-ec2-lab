@@ -2,7 +2,7 @@ variable "subnet_id" {
   type = string
 }
 
-variable "public_sg_id" {
+variable "sg_id" {
   type = string
 }
 
